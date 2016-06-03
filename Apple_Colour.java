@@ -47,13 +47,13 @@ public class Apple_Colour {
 	
 	
 	
-	//@SuppressWarnings("null")		//not exactly sure what this does????
+	
 	public static void main(String[] args) {
 		
 		try{
-			String FileName = "red.png";
+			String FileName = "red.png";	//this is the name of the picture that you want to input
 			BufferedImage image = ImageIO.read(new File(FileName));
-			apple[][] rgbArray = new apple[image.getWidth()][image.getHeight()];
+			apple[][] rgbArray = new apple[image.getWidth()][image.getHeight()]; //this declares the 2D array of apples
 			
 			//this section of code will create the 2D array of objects (if you don't have this, you will get a Null pointer exception)
 			for(int i = 0; i < image.getWidth(); i++){
@@ -65,7 +65,7 @@ public class Apple_Colour {
 			
 
 			
-			
+			//this is what fills the arrays with the RGB values
 			for(int i = 0; i < image.getWidth(); i++){
 				for(int j = 0; j < image.getHeight(); j++){
 					Color mycolour = new Color(image.getRGB(i, j));
