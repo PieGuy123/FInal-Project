@@ -4,8 +4,19 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class Apple_Colour {
+public class analysis_test {
 
+public static void getR(apple[][] intArray){
+	apple.getR(intArray[1][1]);
+}
+
+public static void setVariables1(apple[][] intArray, int R, int G, int B){
+	intArray[1][1].setVariables(R, G, B);
+}
+	
+	
+	
+	//APPLE CLASS------------------
 	static class apple{
 		//these are the three value that the 'apple' object has, the R stands for RED, G stands for Green, and B stands for Blue
 		int R = 0;
@@ -40,20 +51,34 @@ public class Apple_Colour {
 		System.out.println(R + "\n" + G + "\n" + B);
 	}
 	
+	/**
+	 * These three variables will allow you to get the R/G/B values of the object
+	 * 
+	 */
+	public static void getR(apple r){
+		System.out.println(r.R);
+	}
+	public static void getG(apple g){
+		System.out.println(g.G);
+}
+	public static void getB(apple b){
+		System.out.println(b.B);
+}
+
 		
 	}
 	
 	
 	
 	
-	
+	public static apple[][] rgbArray;
 	
 	public static void main(String[] args) {
 		
 		try{
 			String FileName = "red.png";	//this is the name of the picture that you want to input
 			BufferedImage image = ImageIO.read(new File(FileName));
-			apple[][] rgbArray = new apple[image.getWidth()][image.getHeight()]; //this declares the 2D array of apples
+			rgbArray = new apple[image.getWidth()][image.getHeight()]; //this declares the 2D array of apples
 			
 			//this section of code will create the 2D array of objects (if you don't have this, you will get a Null pointer exception)
 			for(int i = 0; i < image.getWidth(); i++){
@@ -75,7 +100,7 @@ public class Apple_Colour {
 					int blue = mycolour.getBlue();
 					
 					rgbArray[i][j].setVariables(red,green,blue);
-					rgbArray[i][j].printout();
+					//rgbArray[i][j].printout();
 					 
 					
 					
@@ -88,10 +113,3 @@ public class Apple_Colour {
 		//System.out.println(rgbArray[0][0].R);
 	}
 }
-
-
-
-
-
-	
-
